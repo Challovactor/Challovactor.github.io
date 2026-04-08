@@ -34,7 +34,7 @@ comments:
   utterances_repo: "Challovactor/Challovactor.github.io"
   utterances_issue_term: "pathname"
   utterances_label: "comment"
-  utterances_theme: "github-dark"
+  utterances_theme: "github-light"
 
 analytics:
   busuanzi: true

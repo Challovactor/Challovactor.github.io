@@ -1,4 +1,3 @@
-const root = document.documentElement;
 const year = document.getElementById("year");
 const timeNode = document.querySelector(".local-time");
 const revealItems = document.querySelectorAll(".reveal");
@@ -23,13 +22,6 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
-
-if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
-  window.addEventListener("pointermove", (event) => {
-    root.style.setProperty("--pointer-x", `${event.clientX}px`);
-    root.style.setProperty("--pointer-y", `${event.clientY}px`);
-  });
-}
 
 if (timeNode) {
   const timezone = timeNode.dataset.timezone || "Asia/Shanghai";
