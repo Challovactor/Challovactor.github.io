@@ -172,7 +172,7 @@ permalink: /
           {% if post.categories and post.categories.size > 0 %}
             <div class="tag-row">
               {% for category in post.categories %}
-                <a href="{{ '/categories/#' | append: category | slugify | relative_url }}">{{ category }}</a>
+                <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
               {% endfor %}
             </div>
           {% endif %}

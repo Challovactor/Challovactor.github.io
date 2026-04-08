@@ -28,7 +28,7 @@ layout: default
             <span class="taxonomy-label">分类</span>
             <div class="tag-row">
               {% for category in page.categories %}
-                <a href="{{ '/categories/#' | append: category | slugify | relative_url }}">{{ category }}</a>
+                <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
               {% endfor %}
             </div>
           </div>
@@ -39,7 +39,7 @@ layout: default
             <span class="taxonomy-label">标签</span>
             <div class="tag-row">
               {% for tag in page.tags %}
-                <a href="{{ '/tags/#' | append: tag | slugify | relative_url }}">{{ tag }}</a>
+                <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
               {% endfor %}
             </div>
           </div>
