@@ -1,6 +1,6 @@
----
+﻿---
 title: 看机器人 benchmark 时，我更关心什么而不是排行榜
-date: 2026-06-20 09:00:00 +0800
+date: 2026-04-05 09:00:00 +0800
 post_type: Study Note
 categories:
   - 具身智能

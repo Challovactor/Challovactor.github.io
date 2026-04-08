@@ -1,6 +1,6 @@
----
+﻿---
 title: 做 RAG 系统前，先补齐这份最小检查清单
-date: 2026-05-07 09:00:00 +0800
+date: 2026-02-20 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 大模型

@@ -1,6 +1,6 @@
----
+﻿---
 title: API 联调为什么总拖慢项目，用 Bruno 或 Postman 该怎么管
-date: 2026-04-27 09:00:00 +0800
+date: 2026-02-10 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 工具使用

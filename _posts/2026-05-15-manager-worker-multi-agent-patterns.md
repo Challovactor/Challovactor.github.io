@@ -1,6 +1,6 @@
----
+﻿---
 title: 多智能体系统里，Manager-Worker 模式什么时候真的值得用
-date: 2026-05-15 09:00:00 +0800
+date: 2026-02-28 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 智能体

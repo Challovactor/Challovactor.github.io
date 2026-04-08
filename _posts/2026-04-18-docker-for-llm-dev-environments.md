@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 Docker 管理大模型开发环境时，最该先解决什么
-date: 2026-04-18 09:00:00 +0800
+date: 2026-02-01 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 环境搭建

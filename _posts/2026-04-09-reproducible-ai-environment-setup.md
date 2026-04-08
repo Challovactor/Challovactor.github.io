@@ -1,6 +1,6 @@
----
+﻿---
 title: 一套可复用的 AI 开发环境搭建方案
-date: 2026-04-09 09:30:00 +0800
+date: 2026-01-23 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 环境搭建

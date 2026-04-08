@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 WSL2 + CUDA + PyTorch 搭一套稳定的开发环境
-date: 2026-04-16 09:00:00 +0800
+date: 2026-01-30 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 环境搭建

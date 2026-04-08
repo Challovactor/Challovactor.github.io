@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 GitHub Issues 管理技术博客选题，是个很实用的方法
-date: 2026-04-22 09:00:00 +0800
+date: 2026-02-05 09:00:00 +0800
 post_type: Guide
 categories:
   - 工具使用

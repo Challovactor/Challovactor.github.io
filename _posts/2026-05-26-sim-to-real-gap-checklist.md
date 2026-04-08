@@ -1,6 +1,6 @@
----
+﻿---
 title: Sim-to-Real 问题该怎么拆，不要只怪仿真不够真
-date: 2026-05-26 09:00:00 +0800
+date: 2026-03-11 09:00:00 +0800
 post_type: Guide
 categories:
   - 具身智能

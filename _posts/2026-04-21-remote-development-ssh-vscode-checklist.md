@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 SSH + VS Code 远程开发时，我最在意的 8 个细节
-date: 2026-04-21 09:00:00 +0800
+date: 2026-02-04 09:00:00 +0800
 post_type: Guide
 categories:
   - 环境搭建

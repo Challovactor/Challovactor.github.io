@@ -1,6 +1,6 @@
----
+﻿---
 title: Vision-Language-Action 模型很热，但工程上先看这几点
-date: 2026-05-28 09:00:00 +0800
+date: 2026-03-13 09:00:00 +0800
 post_type: Guide
 categories:
   - 具身智能

@@ -1,6 +1,6 @@
----
+﻿---
 title: 从 Jupyter Notebook 到可交付脚本，中间最容易漏掉哪些步骤
-date: 2026-04-20 09:00:00 +0800
+date: 2026-02-03 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 环境搭建

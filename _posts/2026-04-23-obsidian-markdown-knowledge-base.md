@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 Obsidian 管技术知识库时，别先忙着做双链
-date: 2026-04-23 09:00:00 +0800
+date: 2026-02-06 09:00:00 +0800
 post_type: Guide
 categories:
   - 工具使用

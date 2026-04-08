@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 GitHub Pages 和 Jekyll 搭一个可持续更新的技术博客
-date: 2026-04-10 10:00:00 +0800
+date: 2026-01-24 09:00:00 +0800
 post_type: Guide
 categories:
   - 工具使用
@@ -54,7 +54,7 @@ search/
 ```yaml
 ---
 title: 文章标题
-date: 2026-04-10 10:00:00 +0800
+date: 2026-01-24 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 工具使用

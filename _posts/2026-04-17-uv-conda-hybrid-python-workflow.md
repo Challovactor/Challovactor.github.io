@@ -1,6 +1,6 @@
----
+﻿---
 title: uv 和 Conda 该怎么配合，才能把 Python 环境管得更稳
-date: 2026-04-17 09:00:00 +0800
+date: 2026-01-31 09:00:00 +0800
 post_type: Guide
 categories:
   - 环境搭建

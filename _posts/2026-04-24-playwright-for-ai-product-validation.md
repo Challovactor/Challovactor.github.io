@@ -1,6 +1,6 @@
----
+﻿---
 title: 用 Playwright 做 AI 产品回归验证，为什么比手测更值
-date: 2026-04-24 09:00:00 +0800
+date: 2026-02-07 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 工具使用

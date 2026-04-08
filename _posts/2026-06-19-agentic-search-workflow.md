@@ -1,6 +1,6 @@
----
+﻿---
 title: Agentic Search 值不值得做，关键看搜索是不是任务的一部分
-date: 2026-06-19 09:00:00 +0800
+date: 2026-04-04 09:00:00 +0800
 post_type: Guide
 categories:
   - 智能体
