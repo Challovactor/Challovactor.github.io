@@ -5,44 +5,39 @@ description: "Search posts on Breeze Ng's blog."
 permalink: /search/
 ---
 <main class="search-main">
-  <section class="section reveal page-hero">
-    <div class="section-heading">
+  <section class="section page-frame reveal">
+    <div class="page-lead">
       <p class="eyebrow">SEARCH INDEX</p>
       <h1 class="page-title">站内搜索</h1>
+      <p class="page-intro">
+        搜索文章标题、摘要、正文、标签和分类。这是纯前端检索，不依赖额外的后端服务。
+      </p>
+
+      <form class="search-panel search-panel-large" data-search-form>
+        <label class="search-label" for="search-input">输入关键词</label>
+        <div class="search-bar">
+          <input
+            id="search-input"
+            name="q"
+            type="search"
+            placeholder="例如：agent workflow、LLM、automation"
+            autocomplete="off"
+          />
+          <button class="button button-primary" type="submit">搜索</button>
+        </div>
+      </form>
     </div>
 
-    <p class="page-intro">
-      搜索文章标题、正文、标签或分类。这个页面走的是纯前端检索，不依赖后端服务。
-    </p>
-
-    <form class="search-panel search-panel-large" data-search-form>
-      <label class="search-label" for="search-input">输入关键词</label>
-      <div class="search-bar">
-        <input
-          id="search-input"
-          name="q"
-          type="search"
-          placeholder="例如：agent workflow、LLM、automation"
-          autocomplete="off"
-        />
-        <button class="button button-primary" type="submit">搜索</button>
+    <aside class="page-rail">
+      <div class="rail-stat">
+        <span class="rail-label">索引内容</span>
+        <strong>标题 / 摘要 / 正文 / 标签 / 分类</strong>
       </div>
-    </form>
-
-    <div class="signal-strip signal-strip-blog">
-      <div class="signal-card">
-        <span class="signal-label">索引内容</span>
-        <strong>文章标题 / 摘要 / 正文 / 标签 / 分类</strong>
-      </div>
-      <div class="signal-card">
-        <span class="signal-label">数据源</span>
+      <div class="rail-stat">
+        <span class="rail-label">数据来源</span>
         <strong>/search.json</strong>
       </div>
-      <div class="signal-card">
-        <span class="signal-label">检索方式</span>
-        <strong>Client-side Filtering</strong>
-      </div>
-    </div>
+    </aside>
   </section>
 
   <section class="section reveal">

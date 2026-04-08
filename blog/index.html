@@ -3,122 +3,120 @@ layout: default
 title: Blog | Breeze Ng
 description: "Technical blog by Breeze Ng covering LLM applications, agent systems, workflow automation, and AI product engineering."
 ---
-<main class="blog-main">
-  <section class="section reveal page-hero">
-    <div class="section-heading">
+<main class="listing-main">
+  <section class="section page-frame reveal">
+    <div class="page-lead">
       <p class="eyebrow">BLOG INDEX</p>
       <h1 class="page-title">构建笔记与技术文章</h1>
+      <p class="page-intro">
+        这里收录关于 LLM 应用、Agent 系统、自动化工程、产品体验和长期构建的文章。
+        我更倾向写可复盘、可迁移、可继续迭代的内容。
+      </p>
+
+      <form class="search-panel" action="{{ '/search/' | relative_url }}" method="get">
+        <label class="search-label" for="blog-search-input">站内搜索</label>
+        <div class="search-bar">
+          <input
+            id="blog-search-input"
+            name="q"
+            type="search"
+            placeholder="搜索文章标题、正文、标签或分类"
+          />
+          <button class="button button-primary" type="submit">搜索</button>
+        </div>
+      </form>
     </div>
 
-    <p class="page-intro">
-      这里是站点的正式博客页。文章由 Jekyll 从 Markdown 自动生成，适合持续记录项目复盘、
-      Agent 设计、LLM 应用开发和产品工程实践。
-    </p>
-
-    <div class="signal-strip signal-strip-blog">
-      <div class="signal-card">
-        <span class="signal-label">文章总数</span>
+    <aside class="page-rail">
+      <div class="rail-stat">
+        <span class="rail-label">文章总数</span>
         <strong>{{ paginator.total_posts | default: site.posts.size }}</strong>
       </div>
-      <div class="signal-card">
-        <span class="signal-label">写作格式</span>
-        <strong>Markdown + Front Matter</strong>
-      </div>
-      <div class="signal-card">
-        <span class="signal-label">当前页码</span>
+      <div class="rail-stat">
+        <span class="rail-label">当前页码</span>
         <strong>{{ paginator.page | default: 1 }} / {{ paginator.total_pages | default: 1 }}</strong>
       </div>
-    </div>
-
-    <form class="search-panel" action="{{ '/search/' | relative_url }}" method="get">
-      <label class="search-label" for="blog-search-input">站内搜索</label>
-      <div class="search-bar">
-        <input
-          id="blog-search-input"
-          name="q"
-          type="search"
-          placeholder="搜索文章标题、正文、标签或分类"
-        />
-        <button class="button button-primary" type="submit">搜索</button>
+      <div class="rail-stat">
+        <span class="rail-label">浏览方式</span>
+        <strong>Tags / Categories / Feed</strong>
       </div>
-    </form>
-
-    <div class="taxonomy-shortcuts">
-      <a class="contact-links-inline" href="{{ '/tags/' | relative_url }}">查看标签页</a>
-      <a class="contact-links-inline" href="{{ '/categories/' | relative_url }}">查看分类页</a>
-      <a class="contact-links-inline" href="{{ '/feed.xml' | relative_url }}">订阅 Feed</a>
-    </div>
+    </aside>
   </section>
 
-  <section class="section reveal">
-    <div class="post-list">
-      {% for post in paginator.posts %}
-        <article class="post-preview">
-          <div class="post-preview-meta">
-            <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
-            <time datetime="{{ post.date | date_to_xmlschema }}">
-              {{ post.date | date: "%Y-%m-%d" }}
-            </time>
-            {% if post.categories and post.categories.size > 0 %}
-              <span>{{ post.categories | join: ", " }}</span>
-            {% endif %}
-          </div>
-
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-
-          {% if post.categories and post.categories.size > 0 %}
-            <div class="tag-row">
-              {% for category in post.categories %}
-                <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-
-          {% if post.tags and post.tags.size > 0 %}
-            <div class="tag-row">
-              {% for tag in post.tags %}
-                <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-              {% endfor %}
-            </div>
-          {% endif %}
-
-          <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
-        </article>
-      {% endfor %}
+  <section class="section section-split reveal">
+    <div class="section-intro section-intro-compact">
+      <p class="eyebrow">BROWSE</p>
+      <h2>按主题进入</h2>
+      <p>你可以按标签、分类或订阅源浏览，也可以直接搜索具体问题。</p>
+      <div class="link-cluster">
+        <a class="contact-links-inline" href="{{ '/tags/' | relative_url }}">标签页</a>
+        <a class="contact-links-inline" href="{{ '/categories/' | relative_url }}">分类页</a>
+        <a class="contact-links-inline" href="{{ '/feed.xml' | relative_url }}">订阅 Feed</a>
+      </div>
     </div>
 
-    {% if paginator.total_pages > 1 %}
-      <nav class="pagination-nav" aria-label="文章分页">
-        {% if paginator.previous_page %}
-          <a class="pagination-link" href="{{ paginator.previous_page_path | relative_url }}">上一页</a>
-        {% else %}
-          <span class="pagination-link is-disabled">上一页</span>
-        {% endif %}
+    <div>
+      <div class="post-stream archive-stream">
+        {% for post in paginator.posts %}
+          <article class="stream-item">
+            <div class="stream-stamp">
+              <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+              {% if post.categories and post.categories.size > 0 %}
+                <span>{{ post.categories | join: ", " }}</span>
+              {% endif %}
+            </div>
 
-        <div class="pagination-numbers">
-          {% for page_number in (1..paginator.total_pages) %}
-            {% if page_number == paginator.page %}
-              <span class="pagination-link is-current">{{ page_number }}</span>
-            {% elsif page_number == 1 %}
-              <a class="pagination-link" href="{{ '/blog/' | relative_url }}">{{ page_number }}</a>
-            {% else %}
-              <a
-                class="pagination-link"
-                href="{{ site.paginate_path | replace: ':num', page_number | relative_url }}"
-              >
-                {{ page_number }}
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
+            <div class="stream-body">
+              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 160 }}</p>
 
-        {% if paginator.next_page %}
-          <a class="pagination-link" href="{{ paginator.next_page_path | relative_url }}">下一页</a>
-        {% else %}
-          <span class="pagination-link is-disabled">下一页</span>
-        {% endif %}
-      </nav>
-    {% endif %}
+              {% if post.tags and post.tags.size > 0 %}
+                <div class="tag-row">
+                  {% for tag in post.tags %}
+                    <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% if paginator.total_pages > 1 %}
+        <nav class="pagination-nav" aria-label="文章分页">
+          {% if paginator.previous_page %}
+            <a class="pagination-link" href="{{ paginator.previous_page_path | relative_url }}">上一页</a>
+          {% else %}
+            <span class="pagination-link is-disabled">上一页</span>
+          {% endif %}
+
+          <div class="pagination-numbers">
+            {% for page_number in (1..paginator.total_pages) %}
+              {% if page_number == paginator.page %}
+                <span class="pagination-link is-current">{{ page_number }}</span>
+              {% elsif page_number == 1 %}
+                <a class="pagination-link" href="{{ '/blog/' | relative_url }}">{{ page_number }}</a>
+              {% else %}
+                <a
+                  class="pagination-link"
+                  href="{{ site.paginate_path | replace: ':num', page_number | relative_url }}"
+                >
+                  {{ page_number }}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if paginator.next_page %}
+            <a class="pagination-link" href="{{ paginator.next_page_path | relative_url }}">下一页</a>
+          {% else %}
+            <span class="pagination-link is-disabled">下一页</span>
+          {% endif %}
+        </nav>
+      {% endif %}
+    </div>
   </section>
 </main>

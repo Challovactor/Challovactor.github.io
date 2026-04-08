@@ -5,16 +5,28 @@ description: "Browse blog posts by category on Breeze Ng's site."
 permalink: /categories/
 ---
 <main class="taxonomy-main">
-  <section class="section reveal page-hero">
-    <div class="section-heading">
+  <section class="section page-frame reveal">
+    <div class="page-lead">
       <p class="eyebrow">CATEGORY INDEX</p>
-      <h1 class="page-title">分类页</h1>
+      <h1 class="page-title">按分类浏览</h1>
+      <p class="page-intro">
+        分类更适合按更大的内容板块进入，比如产品工程、Agent 系统、AI 体验设计等相对稳定的主题范围。
+      </p>
     </div>
 
-    <p class="page-intro">
-      按更高层级的主题看文章归档，适合区分产品工程、Agent 系统、AI 体验设计等不同栏目。
-    </p>
+    <aside class="page-rail">
+      <div class="rail-stat">
+        <span class="rail-label">浏览方式</span>
+        <strong>Category-first</strong>
+      </div>
+      <div class="rail-stat">
+        <span class="rail-label">适合场景</span>
+        <strong>按栏目归档查看</strong>
+      </div>
+    </aside>
+  </section>
 
+  <section class="section reveal">
     <div class="taxonomy-cloud">
       {% assign sorted_categories = site.categories | sort %}
       {% for category in sorted_categories %}
@@ -34,16 +46,19 @@ permalink: /categories/
           <span>{{ category[1].size }} 篇文章</span>
         </div>
 
-        <div class="post-list">
+        <div class="post-stream">
           {% for post in category[1] %}
-            <article class="post-preview">
-              <div class="post-preview-meta">
+            <article class="stream-item">
+              <div class="stream-stamp">
                 <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
               </div>
-              <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-              <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-              <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
+
+              <div class="stream-body">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 140 }}</p>
+                <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
+              </div>
             </article>
           {% endfor %}
         </div>

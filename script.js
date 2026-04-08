@@ -18,7 +18,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.18 }
+  { threshold: 0.16 }
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
@@ -53,6 +53,11 @@ if (searchInput && searchResults && searchStatus) {
       .replace(/\s+/g, " ")
       .trim();
 
+  const slugify = (value) =>
+    normalize(value)
+      .replace(/[^\w\u4e00-\u9fa5 -]/g, "")
+      .replace(/\s+/g, "-");
+
   const renderResults = (query) => {
     const normalizedQuery = normalize(query);
 
@@ -78,11 +83,13 @@ if (searchInput && searchResults && searchStatus) {
 
         const score = terms.reduce((total, term) => {
           let points = 0;
+
           if (normalize(item.title).includes(term)) points += 5;
           if (normalize(item.excerpt).includes(term)) points += 3;
           if ((item.tags || []).some((tag) => normalize(tag).includes(term))) points += 4;
           if ((item.categories || []).some((category) => normalize(category).includes(term))) points += 4;
           if (haystack.includes(term)) points += 1;
+
           return total + points;
         }, 0);
 
@@ -103,24 +110,26 @@ if (searchInput && searchResults && searchStatus) {
         const categories = (item.categories || [])
           .map(
             (category) =>
-              `<a href="/categories/#${category.toLowerCase().replace(/\s+/g, "-")}" class="search-chip">${category}</a>`
+              `<a href="/categories/#${slugify(category)}" class="search-chip">${category}</a>`
           )
           .join("");
 
         const tags = (item.tags || [])
-          .map((tag) => `<a href="/tags/#${tag.toLowerCase().replace(/\s+/g, "-")}" class="search-chip">${tag}</a>`)
+          .map((tag) => `<a href="/tags/#${slugify(tag)}" class="search-chip">${tag}</a>`)
           .join("");
 
         return `
-          <article class="post-preview">
-            <div class="post-preview-meta">
+          <article class="post-preview stream-item">
+            <div class="stream-stamp">
               <span class="writing-type">${item.post_type || "Post"}</span>
               <time datetime="${item.date}">${item.date}</time>
             </div>
-            <h2><a href="${item.url}">${item.title}</a></h2>
-            <p>${item.excerpt}</p>
-            <div class="tag-row">${categories}${tags}</div>
-            <a class="text-link" href="${item.url}">阅读全文</a>
+            <div class="stream-body">
+              <h2><a href="${item.url}">${item.title}</a></h2>
+              <p>${item.excerpt}</p>
+              <div class="tag-row">${categories}${tags}</div>
+              <a class="text-link" href="${item.url}">阅读全文</a>
+            </div>
           </article>
         `;
       })
@@ -131,6 +140,7 @@ if (searchInput && searchResults && searchStatus) {
     .then((response) => response.json())
     .then((data) => {
       searchIndex = data;
+
       if (initialQuery) {
         searchInput.value = initialQuery;
         renderResults(initialQuery);
@@ -140,8 +150,9 @@ if (searchInput && searchResults && searchStatus) {
       searchStatus.textContent = "搜索索引加载失败，请稍后刷新重试。";
     });
 
-  searchForm?.addEventListener("submit", (event) => {
+  searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
     const query = searchInput.value.trim();
     const url = new URL(window.location.href);
 

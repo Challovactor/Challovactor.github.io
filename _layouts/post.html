@@ -2,55 +2,76 @@
 layout: default
 ---
 <main class="post-main">
-  <article class="section post-article reveal">
-    <header class="post-header">
-      <p class="eyebrow">{{ page.post_type | default: "Post" }}</p>
-      <h1>{{ page.title }}</h1>
+  <section class="post-shell reveal">
+    <aside class="post-sidebar">
+      <a class="back-link" href="{{ '/blog/' | relative_url }}">返回博客</a>
 
-      <div class="post-meta-row">
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%Y-%m-%d" }}
-        </time>
+      <div class="sidebar-group">
+        <p class="eyebrow">{{ page.post_type | default: "Post" }}</p>
+        <p class="sidebar-note">这篇文章属于我的长期构建笔记，围绕系统设计、产品工程和 AI 工作流展开。</p>
+      </div>
+
+      <div class="sidebar-group sidebar-meta">
+        <div>
+          <span class="sidebar-label">发布时间</span>
+          <strong>{{ page.date | date: "%Y-%m-%d" }}</strong>
+        </div>
         {% if page.reading_time %}
-          <span>{{ page.reading_time }}</span>
-        {% endif %}
-        {% if page.categories and page.categories.size > 0 %}
-          <span>分类 {{ page.categories | join: ", " }}</span>
+          <div>
+            <span class="sidebar-label">阅读时间</span>
+            <strong>{{ page.reading_time }}</strong>
+          </div>
         {% endif %}
         {% if site.analytics.busuanzi %}
-          <span id="busuanzi_container_page_pv">阅读 <strong id="busuanzi_value_page_pv"></strong></span>
-        {% endif %}
-      </div>
-
-      <div class="taxonomy-meta">
-        {% if page.categories and page.categories.size > 0 %}
-          <div class="taxonomy-line">
-            <span class="taxonomy-label">分类</span>
-            <div class="tag-row">
-              {% for category in page.categories %}
-                <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
-              {% endfor %}
-            </div>
-          </div>
-        {% endif %}
-
-        {% if page.tags and page.tags.size > 0 %}
-          <div class="taxonomy-line">
-            <span class="taxonomy-label">标签</span>
-            <div class="tag-row">
-              {% for tag in page.tags %}
-                <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-              {% endfor %}
-            </div>
+          <div>
+            <span class="sidebar-label">阅读次数</span>
+            <strong id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></strong>
           </div>
         {% endif %}
       </div>
-    </header>
 
-    <div class="post-content">
-      {{ content }}
-    </div>
-  </article>
+      {% if page.categories and page.categories.size > 0 %}
+        <div class="sidebar-group">
+          <span class="taxonomy-label">分类</span>
+          <div class="tag-row">
+            {% for category in page.categories %}
+              <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if page.tags and page.tags.size > 0 %}
+        <div class="sidebar-group">
+          <span class="taxonomy-label">标签</span>
+          <div class="tag-row">
+            {% for tag in page.tags %}
+              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </aside>
+
+    <article class="section post-article">
+      <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <p class="post-summary">{{ page.summary | default: page.excerpt | strip_html | truncate: 180 }}</p>
+
+        <div class="post-meta-row">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+          {% if page.categories and page.categories.size > 0 %}
+            <span>{{ page.categories | join: ", " }}</span>
+          {% endif %}
+          <span><a href="{{ '/feed.xml' | relative_url }}">订阅 Feed</a></span>
+        </div>
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </article>
+  </section>
 
   {% if site.comments.provider == "utterances" and site.comments.utterances_repo %}
     <section class="section reveal">
@@ -61,7 +82,8 @@ layout: default
 
       <div class="comments-shell">
         <p class="comments-note">
-          评论基于 GitHub Issues。首次使用如果出现安装提示，按页面提示授权 `utterances` 到这个仓库即可。
+          评论基于 GitHub Issues。首次使用时如果看到安装提示，按页面引导授权
+          <code>utterances</code> 到这个仓库即可。
         </p>
         <script
           src="https://utteranc.es/client.js"
@@ -76,24 +98,29 @@ layout: default
     </section>
   {% endif %}
 
-  <section class="section reveal">
-    <div class="section-heading section-heading-inline">
-      <div>
-        <p class="eyebrow">MORE WRITING</p>
-        <h2>继续阅读</h2>
-      </div>
+  <section class="section section-split reveal">
+    <div class="section-intro section-intro-compact">
+      <p class="eyebrow">MORE WRITING</p>
+      <h2>继续阅读</h2>
+      <p>如果你对这篇文章感兴趣，下面这些内容大概率也会连着看。</p>
       <a class="text-link" href="{{ '/blog/' | relative_url }}">返回博客首页</a>
     </div>
 
-    <div class="writing-grid">
+    <div class="post-stream">
       {% assign shown = 0 %}
       {% for post in site.posts %}
         {% if post.url != page.url and shown < 3 %}
-          <article class="writing-card">
-            <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 100 }}</p>
-            <a href="{{ post.url | relative_url }}">阅读文章</a>
+          <article class="stream-item">
+            <div class="stream-stamp">
+              <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+            </div>
+
+            <div class="stream-body">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 120 }}</p>
+              <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
+            </div>
           </article>
           {% assign shown = shown | plus: 1 %}
         {% endif %}

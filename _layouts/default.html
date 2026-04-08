@@ -3,13 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f3f5f7" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#f5f1e8" />
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
     {% seo %}
     {% feed_meta %}
@@ -36,17 +30,20 @@
   <body>
     <div class="site-shell">
       <header class="topbar">
-        <a class="brand" href="{{ '/' | relative_url }}">
-          <span class="brand-mark"></span>
-          <span class="brand-text">BREEZE NG</span>
-        </a>
+        <div class="brand-lockup">
+          <a class="brand" href="{{ '/' | relative_url }}">
+            <span class="brand-mark"></span>
+            <span class="brand-text">BREEZE NG</span>
+          </a>
+          <p class="brand-note">notes on ai systems and build workflows</p>
+        </div>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="主导航">
+          <a href="{{ '/#work' | relative_url }}">项目</a>
           <a href="{{ '/blog/' | relative_url }}">博客</a>
           <a href="{{ '/tags/' | relative_url }}">标签</a>
           <a href="{{ '/categories/' | relative_url }}">分类</a>
           <a href="{{ '/search/' | relative_url }}">搜索</a>
-          <a href="{{ '/#work' | relative_url }}">项目</a>
           <a href="{{ '/#story' | relative_url }}">方法</a>
           <a href="{{ '/#contact' | relative_url }}">联系</a>
         </nav>
@@ -55,7 +52,10 @@
       {{ content }}
 
       <footer class="footer">
-        <p>&copy; <span id="year"></span> Breeze Ng. Built on GitHub Pages and Jekyll.</p>
+        <div class="footer-copy">
+          <p>&copy; <span id="year"></span> Breeze Ng</p>
+          <p>Built on GitHub Pages and Jekyll.</p>
+        </div>
         {% if site.analytics.busuanzi %}
           <p class="footer-stats">
             <span id="busuanzi_container_site_uv">访客 <strong id="busuanzi_value_site_uv"></strong></span>
