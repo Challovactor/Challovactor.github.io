@@ -12,11 +12,10 @@
 
 - 首页自动展示最新文章
 - `/blog/` 博客列表页
-- `/tags/` 标签页
 - `/categories/` 分类页
 - `/search/` 站内搜索页
 - Markdown 文章自动生成独立文章页
-- 文章标签、分类、分页、摘要、日期和阅读时长
+- 文章分类、分页、摘要、日期和阅读时长
 - GitHub Issues 驱动的评论系统
 - 站点访问统计
 - GitHub Pages 原生托管，不需要额外服务器
@@ -39,10 +38,7 @@ title: 文章标题
 date: 2026-04-09 09:00:00 +0800
 post_type: Build Log
 categories:
-  - Agent Systems
-tags:
-  - LLM
-  - Agent
+  - 智能体
 reading_time: 4 min read
 ---
 ```

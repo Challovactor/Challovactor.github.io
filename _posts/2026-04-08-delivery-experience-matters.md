@@ -4,10 +4,6 @@ date: 2026-04-08 09:00:00 +0800
 post_type: Guide
 categories:
   - 工具使用
-tags:
-  - UX
-  - AI 工具
-  - 交付体验
 reading_time: 4 min read
 summary: "对于 AI 工具来说，交付体验不是包装层，而是产品逻辑的一部分。"
 ---

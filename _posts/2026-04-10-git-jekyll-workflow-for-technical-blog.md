@@ -4,11 +4,6 @@ date: 2026-04-10 10:00:00 +0800
 post_type: Guide
 categories:
   - 工具使用
-tags:
-  - GitHub Pages
-  - Jekyll
-  - Git
-  - Markdown
 reading_time: 6 min read
 summary: "从仓库命名、文章目录到发布流程，整理一套适合长期写作的 GitHub Pages + Jekyll 工作流。"
 ---

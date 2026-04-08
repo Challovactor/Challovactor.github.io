@@ -4,11 +4,6 @@ date: 2026-04-09 09:30:00 +0800
 post_type: Tutorial
 categories:
   - 环境搭建
-tags:
-  - Python
-  - uv
-  - Conda
-  - CUDA
 reading_time: 7 min read
 summary: "从 Python 版本、依赖管理到 CUDA 环境，整理一套适合 AI 项目的可复用开发环境搭建方法。"
 ---

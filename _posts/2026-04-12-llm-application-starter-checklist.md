@@ -4,11 +4,6 @@ date: 2026-04-12 10:30:00 +0800
 post_type: Guide
 categories:
   - 大模型
-tags:
-  - LLM
-  - Prompt
-  - RAG
-  - Evaluation
 reading_time: 7 min read
 summary: "如果你要把一个大模型能力做成产品功能，这 10 个检查点最好在动手之前就想清楚。"
 ---

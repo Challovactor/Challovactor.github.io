@@ -4,11 +4,6 @@ date: 2026-04-14 08:30:00 +0800
 post_type: Study Note
 categories:
   - 具身智能
-tags:
-  - Embodied AI
-  - Robotics
-  - Perception
-  - Planning
 reading_time: 7 min read
 summary: "如果你正从计算机视觉、大模型或智能体走向具身智能，这篇文章整理了一条更容易落地的学习路线。"
 ---

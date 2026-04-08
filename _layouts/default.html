@@ -11,7 +11,9 @@
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google_tag_id }}"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() {
+          dataLayer.push(arguments);
+        }
         gtag("js", new Date());
         gtag("config", "{{ site.analytics.google_tag_id }}");
       </script>
@@ -41,7 +43,6 @@
         <nav class="nav" aria-label="主导航">
           <a href="{{ '/#work' | relative_url }}">项目</a>
           <a href="{{ '/blog/' | relative_url }}">博客</a>
-          <a href="{{ '/tags/' | relative_url }}">标签</a>
           <a href="{{ '/categories/' | relative_url }}">分类</a>
           <a href="{{ '/search/' | relative_url }}">搜索</a>
           <a href="{{ '/#story' | relative_url }}">方法</a>

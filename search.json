@@ -10,7 +10,6 @@ permalink: /search.json
       "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
       "post_type": {{ post.post_type | jsonify }},
       "categories": {{ post.categories | jsonify }},
-      "tags": {{ post.tags | jsonify }},
       "excerpt": {{ post.excerpt | strip_html | strip_newlines | jsonify }},
       "content": {{ post.content | strip_html | strip_newlines | jsonify }}
     }{% unless forloop.last %},{% endunless %}

@@ -4,11 +4,6 @@ date: 2026-04-11 09:00:00 +0800
 post_type: Tutorial
 categories:
   - 计算机视觉
-tags:
-  - Object Detection
-  - Dataset
-  - Training
-  - Deployment
 reading_time: 8 min read
 summary: "围绕目标检测项目最关键的链路，整理一套从数据、训练到部署的实战清单。"
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog | Breeze Ng
-description: "Technical blog by Breeze Ng covering LLM applications, agent systems, workflow automation, and AI product engineering."
+description: "Technical blog by Breeze Ng covering environment setup, tools, computer vision, large models, agent systems, and embodied intelligence."
 ---
 <main class="listing-main">
   <section class="section page-frame reveal">
@@ -10,7 +10,7 @@ description: "Technical blog by Breeze Ng covering LLM applications, agent syste
       <h1 class="page-title">构建笔记与技术文章</h1>
       <p class="page-intro">
         这里主要收录教程和干货，方向覆盖环境搭建、工具使用、计算机视觉、大模型、智能体和具身智能。
-        我更倾向写可复盘、可迁移、可直接上手实践的内容。
+        内容会尽量做到可复盘、可迁移、可直接上手实践。
       </p>
 
       <form class="search-panel" action="{{ '/search/' | relative_url }}" method="get">
@@ -20,7 +20,7 @@ description: "Technical blog by Breeze Ng covering LLM applications, agent syste
             id="blog-search-input"
             name="q"
             type="search"
-            placeholder="搜索文章标题、正文、标签或分类"
+            placeholder="搜索标题、正文或分类"
           />
           <button class="button button-primary" type="submit">搜索</button>
         </div>
@@ -38,7 +38,7 @@ description: "Technical blog by Breeze Ng covering LLM applications, agent syste
       </div>
       <div class="rail-stat">
         <span class="rail-label">浏览方式</span>
-        <strong>Tags / Categories / Feed</strong>
+        <strong>Category / Search / Feed</strong>
       </div>
     </aside>
   </section>
@@ -46,11 +46,11 @@ description: "Technical blog by Breeze Ng covering LLM applications, agent syste
   <section class="section section-split reveal">
     <div class="section-intro section-intro-compact">
       <p class="eyebrow">BROWSE</p>
-      <h2>按主题进入</h2>
-      <p>你可以按标签、分类或订阅源浏览，也可以直接搜索具体问题。</p>
+      <h2>按分类进入</h2>
+      <p>你可以先按分类筛选，再结合搜索快速定位到具体问题和文章。</p>
       <div class="link-cluster">
-        <a class="contact-links-inline" href="{{ '/tags/' | relative_url }}">标签页</a>
         <a class="contact-links-inline" href="{{ '/categories/' | relative_url }}">分类页</a>
+        <a class="contact-links-inline" href="{{ '/search/' | relative_url }}">搜索页</a>
         <a class="contact-links-inline" href="{{ '/feed.xml' | relative_url }}">订阅 Feed</a>
       </div>
     </div>
@@ -70,15 +70,6 @@ description: "Technical blog by Breeze Ng covering LLM applications, agent syste
             <div class="stream-body">
               <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
               <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 160 }}</p>
-
-              {% if post.tags and post.tags.size > 0 %}
-                <div class="tag-row">
-                  {% for tag in post.tags %}
-                    <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-
               <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
             </div>
           </article>

@@ -4,10 +4,6 @@ date: 2026-04-07 21:30:00 +0800
 post_type: Tutorial
 categories:
   - 智能体
-tags:
-  - Agent
-  - 系统设计
-  - Workflow
 reading_time: 5 min read
 summary: "拆解一个智能体系统最少应该包含哪些层，以及为什么可观测性不能到最后再补。"
 ---

@@ -4,11 +4,6 @@ date: 2026-04-13 11:00:00 +0800
 post_type: Tutorial
 categories:
   - 智能体
-tags:
-  - Agent
-  - Tool Calling
-  - Workflow
-  - Observability
 reading_time: 8 min read
 summary: "把智能体做成一个真实可用的系统，需要关注的不只是 prompt，而是任务结构、工具边界和可观测性。"
 ---

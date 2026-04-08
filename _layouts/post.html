@@ -41,16 +41,6 @@ layout: default
         </div>
       {% endif %}
 
-      {% if page.tags and page.tags.size > 0 %}
-        <div class="sidebar-group">
-          <span class="taxonomy-label">标签</span>
-          <div class="tag-row">
-            {% for tag in page.tags %}
-              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-            {% endfor %}
-          </div>
-        </div>
-      {% endif %}
     </aside>
 
     <article class="section post-article">

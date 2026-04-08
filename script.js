@@ -76,7 +76,6 @@ if (searchInput && searchResults && searchStatus) {
             item.title,
             item.excerpt,
             item.content,
-            ...(item.tags || []),
             ...(item.categories || []),
           ].join(" ")
         );
@@ -86,7 +85,6 @@ if (searchInput && searchResults && searchStatus) {
 
           if (normalize(item.title).includes(term)) points += 5;
           if (normalize(item.excerpt).includes(term)) points += 3;
-          if ((item.tags || []).some((tag) => normalize(tag).includes(term))) points += 4;
           if ((item.categories || []).some((category) => normalize(category).includes(term))) points += 4;
           if (haystack.includes(term)) points += 1;
 
@@ -114,10 +112,6 @@ if (searchInput && searchResults && searchStatus) {
           )
           .join("");
 
-        const tags = (item.tags || [])
-          .map((tag) => `<a href="/tags/#${slugify(tag)}" class="search-chip">${tag}</a>`)
-          .join("");
-
         return `
           <article class="post-preview stream-item">
             <div class="stream-stamp">
@@ -127,7 +121,7 @@ if (searchInput && searchResults && searchStatus) {
             <div class="stream-body">
               <h2><a href="${item.url}">${item.title}</a></h2>
               <p>${item.excerpt}</p>
-              <div class="tag-row">${categories}${tags}</div>
+              <div class="tag-row">${categories}</div>
               <a class="text-link" href="${item.url}">阅读全文</a>
             </div>
           </article>

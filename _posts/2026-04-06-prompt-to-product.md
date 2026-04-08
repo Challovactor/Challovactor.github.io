@@ -4,10 +4,6 @@ date: 2026-04-06 10:00:00 +0800
 post_type: Guide
 categories:
   - 大模型
-tags:
-  - LLM
-  - 产品化
-  - Workflow
 reading_time: 4 min read
 summary: "从输入、输出和失败路径三个角度，理解为什么很多大模型功能很难真正进入生产环境。"
 ---

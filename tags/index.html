@@ -1,68 +1,17 @@
 ---
 layout: default
-title: Tags | Breeze Ng
-description: "Browse blog posts by tag on Breeze Ng's site."
+title: Redirecting | Breeze Ng
 permalink: /tags/
 ---
 <main class="taxonomy-main">
-  <section class="section page-frame reveal">
-    <div class="page-lead">
-      <p class="eyebrow">TAG INDEX</p>
-      <h1 class="page-title">按标签浏览</h1>
-      <p class="page-intro">
-        标签更适合按具体问题进入，比如 Agent、LLM、Workflow、Automation 或产品工程中的某个切面。
-      </p>
-    </div>
-
-    <aside class="page-rail">
-      <div class="rail-stat">
-        <span class="rail-label">浏览方式</span>
-        <strong>Tag-first</strong>
-      </div>
-      <div class="rail-stat">
-        <span class="rail-label">适合场景</span>
-        <strong>按技术主题快速进入</strong>
-      </div>
-    </aside>
-  </section>
-
   <section class="section reveal">
-    <div class="taxonomy-cloud">
-      {% assign sorted_tags = site.tags | sort %}
-      {% for tag in sorted_tags %}
-        <a class="taxonomy-pill" href="#{{ tag[0] | slugify }}">
-          {{ tag[0] }}
-          <span>{{ tag[1].size }}</span>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="section reveal">
-    {% for tag in sorted_tags %}
-      <div class="taxonomy-group" id="{{ tag[0] | slugify }}">
-        <div class="taxonomy-heading">
-          <h2>{{ tag[0] }}</h2>
-          <span>{{ tag[1].size }} 篇文章</span>
-        </div>
-
-        <div class="post-stream">
-          {% for post in tag[1] %}
-            <article class="stream-item">
-              <div class="stream-stamp">
-                <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
-              </div>
-
-              <div class="stream-body">
-                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 140 }}</p>
-                <a class="text-link" href="{{ post.url | relative_url }}">阅读全文</a>
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
+    <p class="eyebrow">REDIRECT</p>
+    <h1 class="page-title">标签页已合并到分类页</h1>
+    <p class="page-intro">站点已统一为分类归档，正在跳转到分类页面。</p>
+    <a class="contact-links-inline" href="{{ '/categories/' | relative_url }}">前往分类页</a>
   </section>
 </main>
+
+<script>
+  window.location.replace("{{ '/categories/' | relative_url }}");
+</script>
