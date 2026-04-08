@@ -101,7 +101,7 @@ main,
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 18px 24px;
+  padding: 16px 22px;
   margin-bottom: 26px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -118,7 +118,7 @@ main,
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.84rem;
+  font-size: 0.78rem;
 }
 
 .brand-mark {
@@ -137,7 +137,7 @@ main,
 
 .nav a {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   transition: color 180ms ease, transform 180ms ease;
 }
 
@@ -164,7 +164,7 @@ main,
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.9fr);
   gap: 28px;
-  padding: 54px;
+  padding: 44px;
   border-radius: 38px;
   overflow: hidden;
 }
@@ -186,8 +186,8 @@ main,
   font-family: "IBM Plex Mono", monospace;
   color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
 }
 
 .hero h1,
@@ -199,20 +199,20 @@ main,
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 0.98;
+  line-height: 1.02;
 }
 
 .hero h1 {
   margin-top: 18px;
-  font-size: clamp(3.4rem, 6vw, 5.8rem);
-  max-width: 10ch;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  max-width: 11ch;
 }
 
 .hero-text {
   max-width: 58ch;
   margin: 24px 0 0;
-  font-size: 1.05rem;
-  line-height: 1.9;
+  font-size: 0.98rem;
+  line-height: 1.78;
   color: var(--muted);
 }
 
@@ -227,11 +227,12 @@ main,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0 22px;
+  min-height: 48px;
+  padding: 0 20px;
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 700;
+  font-size: 0.92rem;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -286,7 +287,7 @@ main,
   display: block;
   margin-bottom: 8px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.74rem;
 }
 
 .hero-panel {
@@ -295,7 +296,7 @@ main,
 }
 
 .glass-card {
-  padding: 28px;
+  padding: 24px;
   border: 1px solid rgba(141, 225, 255, 0.1);
   background:
     linear-gradient(180deg, rgba(123, 136, 255, 0.08), rgba(255, 255, 255, 0.03)),
@@ -305,7 +306,7 @@ main,
 
 .profile-card h2 {
   margin-top: 12px;
-  font-size: clamp(2rem, 2.6vw, 3rem);
+  font-size: clamp(1.7rem, 2.2vw, 2.5rem);
 }
 
 .profile-card p:last-child,
@@ -316,8 +317,9 @@ main,
 .story-note p,
 .contact-card p {
   margin-bottom: 0;
-  line-height: 1.85;
+  line-height: 1.72;
   color: var(--muted);
+  font-size: 0.96rem;
 }
 
 .metrics-grid {
@@ -327,7 +329,7 @@ main,
 }
 
 .metric-card {
-  padding: 22px 18px;
+  padding: 20px 16px;
   border: 1px solid rgba(141, 225, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
   text-align: center;
@@ -337,7 +339,7 @@ main,
   display: block;
   margin-bottom: 12px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 2.3rem;
+  font-size: 1.85rem;
   letter-spacing: 0.12em;
   line-height: 1;
   color: var(--gold);
@@ -345,7 +347,7 @@ main,
 
 .section {
   margin-top: 24px;
-  padding: 36px;
+  padding: 30px;
   border-radius: 32px;
 }
 
@@ -363,7 +365,7 @@ main,
 .section h2,
 .contact-card h2 {
   margin-top: 10px;
-  font-size: clamp(2.2rem, 3vw, 3.4rem);
+  font-size: clamp(1.9rem, 2.5vw, 2.85rem);
 }
 
 .text-link,
@@ -387,7 +389,7 @@ main,
   display: inline-block;
   margin-bottom: 14px;
   color: var(--teal);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.14em;
 }
@@ -397,7 +399,8 @@ main,
 .writing-card h3,
 .timeline-item h3 {
   margin: 0 0 14px;
-  font-size: 1.28rem;
+  font-size: 1.14rem;
+  line-height: 1.35;
 }
 
 .projects-grid {
@@ -408,7 +411,7 @@ main,
 
 .project-card {
   min-height: 280px;
-  padding: 28px;
+  padding: 24px;
   border: 1px solid rgba(141, 225, 255, 0.1);
   background:
     linear-gradient(180deg, rgba(123, 136, 255, 0.08), rgba(255, 255, 255, 0.02)),
@@ -455,12 +458,12 @@ main,
   border: 1px solid rgba(141, 225, 255, 0.12);
   background: rgba(123, 136, 255, 0.08);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
 }
 
 .writing-card {
   min-height: 240px;
-  padding: 28px;
+  padding: 24px;
   border: 1px solid rgba(141, 225, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
 }
@@ -485,7 +488,7 @@ main,
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr);
   gap: 18px;
-  padding: 22px 24px;
+  padding: 20px 22px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(141, 225, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
@@ -493,7 +496,7 @@ main,
 
 .timeline-year {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 2rem;
+  font-size: 1.55rem;
   color: var(--gold);
 }
 
@@ -504,7 +507,7 @@ main,
 }
 
 .contact-card {
-  padding: 42px;
+  padding: 34px;
 }
 
 .contact-links {
@@ -525,7 +528,7 @@ main,
   padding: 18px 8px 0;
   color: var(--muted);
   text-align: center;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
 }
 
 .footer-stats {
@@ -610,7 +613,7 @@ main,
   }
 
   .hero h1 {
-    font-size: clamp(2.9rem, 13vw, 4rem);
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
     max-width: none;
   }
 
@@ -671,12 +674,12 @@ main,
   font-family: "Cormorant Garamond", serif;
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 0.98;
+  line-height: 1.02;
 }
 
 .page-title {
   margin-top: 10px;
-  font-size: clamp(2.6rem, 4vw, 4.6rem);
+  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
 }
 
 .page-intro,
@@ -684,8 +687,8 @@ main,
   max-width: 62ch;
   margin: 22px 0 0;
   color: var(--muted);
-  line-height: 1.9;
-  font-size: 1.04rem;
+  line-height: 1.78;
+  font-size: 0.98rem;
 }
 
 .signal-strip-blog {
@@ -698,7 +701,7 @@ main,
 }
 
 .post-preview {
-  padding: 28px;
+  padding: 24px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(141, 225, 255, 0.1);
   background:
@@ -721,7 +724,7 @@ main,
   align-items: center;
   color: var(--muted);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .post-preview h2,
@@ -730,13 +733,15 @@ main,
 }
 
 .post-preview h2 {
-  font-size: clamp(1.7rem, 2.2vw, 2.5rem);
+  font-size: clamp(1.45rem, 1.9vw, 2.05rem);
+  line-height: 1.18;
 }
 
 .post-preview p {
   margin: 0 0 18px;
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.72;
+  font-size: 0.95rem;
 }
 
 .post-main {
@@ -750,8 +755,8 @@ main,
 
 .post-content {
   color: var(--text);
-  line-height: 1.95;
-  font-size: 1.02rem;
+  line-height: 1.82;
+  font-size: 0.98rem;
 }
 
 .post-content > :first-child {
@@ -768,11 +773,11 @@ main,
 }
 
 .post-content h2 {
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(1.7rem, 2.4vw, 2.3rem);
 }
 
 .post-content h3 {
-  font-size: 1.55rem;
+  font-size: 1.3rem;
 }
 
 .post-content p,
@@ -802,7 +807,7 @@ main,
   border-radius: 8px;
   background: rgba(123, 136, 255, 0.12);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.92em;
+  font-size: 0.88em;
 }
 
 .post-content pre {
@@ -841,7 +846,7 @@ main,
 .taxonomy-label,
 .search-label {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
@@ -884,7 +889,7 @@ main,
 }
 
 .search-bar input {
-  min-height: 54px;
+  min-height: 50px;
   padding: 0 18px;
   border-radius: 999px;
   border: 1px solid rgba(141, 225, 255, 0.14);
@@ -925,7 +930,7 @@ main,
 
 .taxonomy-pill span {
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.78rem;
 }
 
 .taxonomy-cloud {
@@ -950,7 +955,7 @@ main,
 .taxonomy-heading h2 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 2.4vw, 3rem);
+  font-size: clamp(1.65rem, 2vw, 2.2rem);
   line-height: 1;
 }
 
@@ -985,12 +990,12 @@ main,
 
 .search-status {
   margin-bottom: 18px;
-  font-size: 0.96rem;
+  font-size: 0.9rem;
 }
 
 .search-chip {
   padding: 8px 12px;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
 }
 
 @media (max-width: 760px) {
@@ -1000,12 +1005,12 @@ main,
   }
 
   .page-title {
-    font-size: clamp(2.5rem, 12vw, 3.4rem);
+    font-size: clamp(2rem, 10vw, 2.9rem);
   }
 
   .post-preview h2,
   .post-header h1 {
-    font-size: clamp(2rem, 10vw, 3.2rem);
+    font-size: clamp(1.7rem, 9vw, 2.6rem);
   }
 
   .search-bar {
