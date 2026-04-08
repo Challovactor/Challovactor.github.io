@@ -1,17 +1,18 @@
 ---
-title: Delivery Experience Matters in AI Products
+title: AI 工具交付体验为什么会直接影响留存
 date: 2026-04-08 09:00:00 +0800
-post_type: Field Memo
+post_type: Guide
 categories:
-  - AI UX
+  - 工具使用
 tags:
   - UX
-  - AI Product
-  - Delivery
+  - AI 工具
+  - 交付体验
 reading_time: 4 min read
+summary: "对于 AI 工具来说，交付体验不是包装层，而是产品逻辑的一部分。"
 ---
 
-很多 AI 产品会把“能力”展示得很满，却忽略了“交付体验”这件事。
+很多 AI 工具会把“能力”展示得很满，却忽略了“交付体验”这件事。
 
 <!--more-->
 

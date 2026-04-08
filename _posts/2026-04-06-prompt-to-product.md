@@ -1,17 +1,18 @@
 ---
-title: Why AI Products Get Stuck in the Last Mile
+title: 大模型产品化最容易卡住的最后一公里
 date: 2026-04-06 10:00:00 +0800
-post_type: Build Log
+post_type: Guide
 categories:
-  - Product Engineering
+  - 大模型
 tags:
   - LLM
-  - Product
+  - 产品化
   - Workflow
 reading_time: 4 min read
+summary: "从输入、输出和失败路径三个角度，理解为什么很多大模型功能很难真正进入生产环境。"
 ---
 
-很多 AI 应用在演示时都很亮眼，但一到真实环境就开始变形。原因通常不是模型突然“不聪明”了，而是系统设计只覆盖了成功路径，没有覆盖真实世界的复杂度。
+很多大模型应用在演示时都很亮眼，但一进入真实环境就开始变形。问题通常不是模型突然“不聪明”了，而是系统设计只覆盖了成功路径，没有覆盖真实世界的复杂度。
 
 <!--more-->
 

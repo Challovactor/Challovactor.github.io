@@ -1,17 +1,18 @@
 ---
-title: Designing an Extensible Agent Workflow
+title: 可扩展智能体工作流应该怎么设计
 date: 2026-04-07 21:30:00 +0800
-post_type: System Note
+post_type: Tutorial
 categories:
-  - Agent Systems
+  - 智能体
 tags:
   - Agent
-  - System Design
-  - Automation
+  - 系统设计
+  - Workflow
 reading_time: 5 min read
+summary: "拆解一个智能体系统最少应该包含哪些层，以及为什么可观测性不能到最后再补。"
 ---
 
-当我设计一个 Agent 系统时，通常不会先从 prompt 开始，而是先画任务结构。
+当我设计一个智能体系统时，通常不会先从 prompt 开始，而是先画任务结构。
 
 <!--more-->
 
