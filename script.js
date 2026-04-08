@@ -164,3 +164,38 @@ if (searchInput && searchResults && searchStatus) {
     renderResults(query);
   });
 }
+
+const categoryPage = document.querySelector("[data-category-page]");
+
+if (categoryPage) {
+  const categoryPills = Array.from(document.querySelectorAll("[data-category-pill]"));
+  const categoryGroups = Array.from(document.querySelectorAll("[data-category-group]"));
+
+  const applyCategoryFilter = (slug) => {
+    const activeSlug = slug && slug !== "all" ? slug : "all";
+
+    categoryPills.forEach((pill) => {
+      pill.classList.toggle("is-active", pill.dataset.categoryPill === activeSlug);
+    });
+
+    categoryGroups.forEach((group) => {
+      const shouldShow = activeSlug === "all" || group.dataset.categoryGroup === activeSlug;
+      group.classList.toggle("is-hidden", !shouldShow);
+    });
+  };
+
+  const syncCategoryFilterFromHash = () => {
+    const slug = decodeURIComponent(window.location.hash.replace(/^#/, "")).trim();
+    applyCategoryFilter(slug || "all");
+  };
+
+  categoryPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const slug = pill.dataset.categoryPill || "all";
+      applyCategoryFilter(slug);
+    });
+  });
+
+  window.addEventListener("hashchange", syncCategoryFilterFromHash);
+  syncCategoryFilterFromHash();
+}

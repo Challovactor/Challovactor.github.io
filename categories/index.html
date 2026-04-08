@@ -4,7 +4,8 @@ title: Categories | Breeze Ng
 description: "Browse blog posts by category on Breeze Ng's site."
 permalink: /categories/
 ---
-<main class="taxonomy-main">
+{% assign sorted_categories = site.categories | sort %}
+<main class="taxonomy-main" data-category-page>
   <section class="section page-frame reveal">
     <div class="page-lead">
       <p class="eyebrow">CATEGORY INDEX</p>
@@ -28,9 +29,13 @@ permalink: /categories/
 
   <section class="section reveal">
     <div class="taxonomy-cloud">
-      {% assign sorted_categories = site.categories | sort %}
+      <a class="taxonomy-pill is-active" href="#all" data-category-pill="all">
+        全部
+        <span>{{ site.posts.size }}</span>
+      </a>
       {% for category in sorted_categories %}
-        <a class="taxonomy-pill" href="#{{ category[0] | slugify }}">
+        {% assign category_slug = category[0] | slugify %}
+        <a class="taxonomy-pill" href="#{{ category_slug }}" data-category-pill="{{ category_slug }}">
           {{ category[0] }}
           <span>{{ category[1].size }}</span>
         </a>
@@ -40,7 +45,8 @@ permalink: /categories/
 
   <section class="section reveal">
     {% for category in sorted_categories %}
-      <div class="taxonomy-group" id="{{ category[0] | slugify }}">
+      {% assign category_slug = category[0] | slugify %}
+      <div class="taxonomy-group" id="{{ category_slug }}" data-category-group="{{ category_slug }}">
         <div class="taxonomy-heading">
           <h2>{{ category[0] }}</h2>
           <span>{{ category[1].size }} 篇文章</span>

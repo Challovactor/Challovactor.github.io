@@ -952,13 +952,28 @@ main,
   font-size: 0.7rem;
 }
 
+.taxonomy-pill.is-active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, #234dc6, #18398f);
+  color: #fff;
+}
+
+.taxonomy-pill.is-active span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
 .taxonomy-group {
   padding: 22px 24px;
   border-radius: 20px;
+  scroll-margin-top: 96px;
 }
 
 .taxonomy-group + .taxonomy-group {
   margin-top: 14px;
+}
+
+.taxonomy-group.is-hidden {
+  display: none;
 }
 
 .taxonomy-heading {
