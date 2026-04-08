@@ -9,6 +9,7 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 excerpt_separator: <!--more-->
+future: true
 
 author:
   name: Breeze Ng
