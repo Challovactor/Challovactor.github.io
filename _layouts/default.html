@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
     {% seo %}
     {% feed_meta %}
+    {% if site.analytics.google_tag_id and site.analytics.google_tag_id != "" %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google_tag_id }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "{{ site.analytics.google_tag_id }}");
+      </script>
+    {% endif %}
+    {% if site.analytics.goatcounter_site and site.analytics.goatcounter_site != "" %}
+      <script
+        data-goatcounter="https://{{ site.analytics.goatcounter_site }}/count"
+        async
+        src="//gc.zgo.at/count.js"
+      ></script>
+    {% endif %}
+    {% if site.analytics.busuanzi %}
+      <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    {% endif %}
   </head>
   <body>
     <div class="site-shell">
@@ -28,6 +47,9 @@
         <nav class="nav">
           <a href="{{ '/#work' | relative_url }}">项目</a>
           <a href="{{ '/blog/' | relative_url }}">博客</a>
+          <a href="{{ '/tags/' | relative_url }}">标签</a>
+          <a href="{{ '/categories/' | relative_url }}">分类</a>
+          <a href="{{ '/search/' | relative_url }}">搜索</a>
           <a href="{{ '/#story' | relative_url }}">方法</a>
           <a href="{{ '/#contact' | relative_url }}">联系</a>
         </nav>
@@ -37,6 +59,12 @@
 
       <footer class="footer">
         <p>© <span id="year"></span> Breeze Ng. Built on GitHub Pages and Jekyll.</p>
+        {% if site.analytics.busuanzi %}
+          <p class="footer-stats">
+            <span id="busuanzi_container_site_uv">访客 <strong id="busuanzi_value_site_uv"></strong></span>
+            <span id="busuanzi_container_site_pv">访问 <strong id="busuanzi_value_site_pv"></strong></span>
+          </p>
+        {% endif %}
       </footer>
     </div>
 

@@ -2,6 +2,8 @@
 title: Designing an Extensible Agent Workflow
 date: 2026-04-07 21:30:00 +0800
 post_type: System Note
+categories:
+  - Agent Systems
 tags:
   - Agent
   - System Design

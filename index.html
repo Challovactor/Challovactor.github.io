@@ -157,12 +157,25 @@ permalink: /
       <a class="text-link" href="{{ '/blog/' | relative_url }}">查看全部文章</a>
     </div>
 
+    <div class="taxonomy-shortcuts taxonomy-shortcuts-home">
+      <a class="contact-links-inline" href="{{ '/tags/' | relative_url }}">标签页</a>
+      <a class="contact-links-inline" href="{{ '/categories/' | relative_url }}">分类页</a>
+      <a class="contact-links-inline" href="{{ '/search/' | relative_url }}">搜索页</a>
+    </div>
+
     <div class="writing-grid">
       {% for post in site.posts limit:3 %}
         <article class="writing-card">
           <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
           <h3>{{ post.title }}</h3>
-          <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 96 }}</p>
+          <p>{{ post.excerpt | strip_html | truncate: 96 }}</p>
+          {% if post.categories and post.categories.size > 0 %}
+            <div class="tag-row">
+              {% for category in post.categories %}
+                <a href="{{ '/categories/#' | append: category | slugify | relative_url }}">{{ category }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
           <a href="{{ post.url | relative_url }}">阅读文章</a>
         </article>
       {% endfor %}

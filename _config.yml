@@ -22,8 +22,24 @@ social:
 
 plugins:
   - jekyll-feed
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+
+paginate: 2
+paginate_path: "/blog/page:num/"
+
+comments:
+  provider: utterances
+  utterances_repo: "Challovactor/Challovactor.github.io"
+  utterances_issue_term: "pathname"
+  utterances_label: "comment"
+  utterances_theme: "github-dark"
+
+analytics:
+  busuanzi: true
+  goatcounter_site: ""
+  google_tag_id: ""
 
 defaults:
   - scope:

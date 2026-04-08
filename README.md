@@ -12,8 +12,13 @@
 
 - 首页自动展示最新文章
 - `/blog/` 博客列表页
+- `/tags/` 标签页
+- `/categories/` 分类页
+- `/search/` 站内搜索页
 - Markdown 文章自动生成独立文章页
-- 文章标签、摘要、日期和阅读时长
+- 文章标签、分类、分页、摘要、日期和阅读时长
+- GitHub Issues 驱动的评论系统
+- 站点访问统计
 - GitHub Pages 原生托管，不需要额外服务器
 
 ## 怎么写新文章
@@ -33,7 +38,8 @@
 title: 文章标题
 date: 2026-04-09 09:00:00 +0800
 post_type: Build Log
-summary: 一句话摘要
+categories:
+  - Agent Systems
 tags:
   - LLM
   - Agent
@@ -46,6 +52,25 @@ reading_time: 4 min read
 如果你想控制首页摘要，可以在正文里插入：
 
 `<!--more-->`
+
+## 评论系统
+
+站点已经接入 `utterances`，评论会基于 GitHub Issues 工作。
+
+当前配置仓库是：
+
+`Challovactor/Challovactor.github.io`
+
+如果评论区首次提示需要安装或授权 `utterances`，按页面提示完成一次即可。
+
+## 访问统计
+
+站点默认接入了 `Busuanzi` 的访客与访问量统计。
+
+如果你后面想换成更完整的统计方案，也可以在 `_config.yml` 里填写：
+
+- `analytics.goatcounter_site`
+- `analytics.google_tag_id`
 
 ## 本地预览
 

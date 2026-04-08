@@ -2,6 +2,8 @@
 title: Why AI Products Get Stuck in the Last Mile
 date: 2026-04-06 10:00:00 +0800
 post_type: Build Log
+categories:
+  - Product Engineering
 tags:
   - LLM
   - Product

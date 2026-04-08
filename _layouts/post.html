@@ -14,25 +14,67 @@ layout: default
         {% if page.reading_time %}
           <span>{{ page.reading_time }}</span>
         {% endif %}
+        {% if page.categories and page.categories.size > 0 %}
+          <span>分类 {{ page.categories | join: ", " }}</span>
+        {% endif %}
+        {% if site.analytics.busuanzi %}
+          <span id="busuanzi_container_page_pv">阅读 <strong id="busuanzi_value_page_pv"></strong></span>
+        {% endif %}
       </div>
 
-      {% if page.summary %}
-        <p class="post-summary">{{ page.summary }}</p>
-      {% endif %}
+      <div class="taxonomy-meta">
+        {% if page.categories and page.categories.size > 0 %}
+          <div class="taxonomy-line">
+            <span class="taxonomy-label">分类</span>
+            <div class="tag-row">
+              {% for category in page.categories %}
+                <a href="{{ '/categories/#' | append: category | slugify | relative_url }}">{{ category }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
 
-      {% if page.tags and page.tags.size > 0 %}
-        <div class="tag-row">
-          {% for tag in page.tags %}
-            <span>{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
+        {% if page.tags and page.tags.size > 0 %}
+          <div class="taxonomy-line">
+            <span class="taxonomy-label">标签</span>
+            <div class="tag-row">
+              {% for tag in page.tags %}
+                <a href="{{ '/tags/#' | append: tag | slugify | relative_url }}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
     </header>
 
     <div class="post-content">
       {{ content }}
     </div>
   </article>
+
+  {% if site.comments.provider == "utterances" and site.comments.utterances_repo %}
+    <section class="section reveal">
+      <div class="section-heading">
+        <p class="eyebrow">COMMENTS</p>
+        <h2>评论区</h2>
+      </div>
+
+      <div class="comments-shell">
+        <p class="comments-note">
+          评论基于 GitHub Issues。首次使用如果出现安装提示，按页面提示授权 `utterances` 到这个仓库即可。
+        </p>
+        <script
+          src="https://utteranc.es/client.js"
+          repo="{{ site.comments.utterances_repo }}"
+          issue-term="{{ site.comments.utterances_issue_term | default: 'pathname' }}"
+          label="{{ site.comments.utterances_label | default: 'comment' }}"
+          theme="{{ site.comments.utterances_theme | default: 'github-dark' }}"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </div>
+    </section>
+  {% endif %}
 
   <section class="section reveal">
     <div class="section-heading section-heading-inline">

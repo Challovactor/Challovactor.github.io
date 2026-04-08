@@ -2,6 +2,8 @@
 title: Delivery Experience Matters in AI Products
 date: 2026-04-08 09:00:00 +0800
 post_type: Field Memo
+categories:
+  - AI UX
 tags:
   - UX
   - AI Product
