@@ -1,281 +1,234 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Breeze Ng | AI Developer</title>
-    <meta
-      name="description"
-      content="Breeze Ng 的个人主页，一套适合部署到 GitHub Pages 的 AI 开发者风格网站，用来展示 LLM 应用、Agent 系统、自动化实验和技术写作。"
-    />
-    <meta name="theme-color" content="#06111f" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <div class="site-glow site-glow-a"></div>
-      <div class="site-glow site-glow-b"></div>
+---
+layout: default
+title: Breeze Ng | AI Developer
+description: "AI developer homepage and technical blog for Breeze Ng, covering LLM applications, agent systems, automation workflows, and build notes."
+permalink: /
+---
+<main>
+  <section class="hero reveal" id="home">
+    <div class="hero-copy">
+      <p class="eyebrow">AI DEVELOPER / AGENT BUILDER / OPEN SOURCE</p>
+      <h1>把模型能力、产品思维和工程落地，连接成真正可运行的系统。</h1>
+      <p class="hero-text">
+        我是 <strong>Breeze Ng</strong>，聚焦 LLM 应用、Agent 工作流、多模态交互和自动化工具。
+        这里现在不只是个人主页，也是一套真正可持续更新的博客系统，用来展示项目、发布文章、记录构建过程。
+      </p>
 
-      <header class="topbar">
-        <a class="brand" href="#home">
-          <span class="brand-mark"></span>
-          <span class="brand-text">BREEZE NG</span>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ '/blog/' | relative_url }}">进入博客系统</a>
+        <a
+          class="button button-secondary"
+          href="https://github.com/Challovactor"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub / Challovactor
         </a>
+      </div>
 
-        <nav class="nav">
-          <a href="#work">项目</a>
-          <a href="#writing">笔记</a>
-          <a href="#story">方法</a>
-          <a href="#contact">联系</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="hero reveal" id="home">
-          <div class="hero-copy">
-            <p class="eyebrow">AI DEVELOPER / AGENT BUILDER / OPEN SOURCE</p>
-            <h1>把模型能力、产品思维和工程落地，连接成真正可运行的系统。</h1>
-            <p class="hero-text">
-              我是 <strong>Breeze Ng</strong>，聚焦 LLM 应用、Agent 工作流、多模态交互和自动化工具。
-              这里是我的线上主场，用来展示项目、记录构建过程，也沉淀我对 AI 产品与开发体验的判断。
-            </p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="#work">查看项目模块</a>
-              <a
-                class="button button-secondary"
-                href="https://github.com/Challovactor"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub / Challovactor
-              </a>
-            </div>
-
-            <div class="signal-strip">
-              <div class="signal-card">
-                <span class="signal-label">当前聚焦</span>
-                <strong>LLM 应用、Agent 编排、效率自动化</strong>
-              </div>
-              <div class="signal-card">
-                <span class="signal-label">技术方向</span>
-                <strong>AI Product Engineering / Workflow Design</strong>
-              </div>
-              <div class="signal-card">
-                <span class="signal-label">本地时间</span>
-                <strong class="local-time" data-timezone="Asia/Shanghai">--:--</strong>
-              </div>
-            </div>
-          </div>
-
-          <aside class="hero-panel">
-            <div class="glass-card profile-card">
-              <p class="card-kicker">SYSTEM PROFILE</p>
-              <h2>为 AI 产品做工程化封装，也为工程系统保留产品感。</h2>
-              <p>
-                我更关心的不只是模型是否可用，而是它能不能被接入真实流程、被稳定迭代、被普通用户真正用起来。
-              </p>
-            </div>
-
-            <div class="metrics-grid">
-              <article class="metric-card">
-                <span class="metric-number">LLM</span>
-                <span class="metric-label">应用层能力设计</span>
-              </article>
-              <article class="metric-card">
-                <span class="metric-number">AGT</span>
-                <span class="metric-label">Agent 流程搭建</span>
-              </article>
-              <article class="metric-card">
-                <span class="metric-number">OPS</span>
-                <span class="metric-label">自动化与交付</span>
-              </article>
-            </div>
-          </aside>
-        </section>
-
-        <section class="section manifesto reveal">
-          <div class="section-heading">
-            <p class="eyebrow">TECH FOCUS</p>
-            <h2>我关注的构建方向</h2>
-          </div>
-
-          <div class="manifesto-grid">
-            <article class="glass-card manifesto-card">
-              <span class="manifesto-index">01</span>
-              <h3>LLM Applications</h3>
-              <p>把大模型能力转成清晰的产品功能，而不是停留在 demo 级别的对话界面。</p>
-            </article>
-            <article class="glass-card manifesto-card">
-              <span class="manifesto-index">02</span>
-              <h3>Agent Workflows</h3>
-              <p>关注多步骤任务拆解、上下文流转、工具调用和真实业务流程里的执行稳定性。</p>
-            </article>
-            <article class="glass-card manifesto-card">
-              <span class="manifesto-index">03</span>
-              <h3>Automation Systems</h3>
-              <p>把重复操作、内容生成、数据处理和协作环节，做成真正省时间的自动化系统。</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section reveal" id="work">
-          <div class="section-heading section-heading-inline">
-            <div>
-              <p class="eyebrow">SELECTED MODULES</p>
-              <h2>项目展示</h2>
-            </div>
-            <a
-              class="text-link"
-              href="https://github.com/Challovactor"
-              target="_blank"
-              rel="noreferrer"
-            >
-              查看 GitHub 仓库
-            </a>
-          </div>
-
-          <div class="projects-grid">
-            <article class="project-card project-card-featured">
-              <div class="project-meta">
-                <span>FEATURED</span>
-                <span>Agent / Product / Interface</span>
-              </div>
-              <h3>Agent Workspace</h3>
-              <p>
-                面向真实任务流的 Agent 工作台：整合模型调用、上下文组织、操作反馈和结果交付，把 AI 从“聊天”推进到“执行”。
-              </p>
-              <div class="tag-row">
-                <span>LLM</span>
-                <span>Agent</span>
-                <span>Workflow</span>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span>MODULE 01</span>
-                <span>Automation</span>
-              </div>
-              <h3>Workflow Automations</h3>
-              <p>把表单处理、内容生成、消息分发和重复性工作编排成可复用的自动化流程。</p>
-            </article>
-
-            <article class="project-card">
-              <div class="project-meta">
-                <span>MODULE 02</span>
-                <span>Multimodal</span>
-              </div>
-              <h3>Multimodal Interfaces</h3>
-              <p>探索文本、图片、结构化输入和操作界面之间的协同，让 AI 交互更自然也更高效。</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section reveal" id="writing">
-          <div class="section-heading">
-            <p class="eyebrow">LAB NOTES</p>
-            <h2>构建笔记</h2>
-          </div>
-
-          <div class="writing-grid">
-            <article class="writing-card">
-              <span class="writing-type">Build Log</span>
-              <h3>从 Prompt 到 Product：AI 应用为什么总卡在最后一公里</h3>
-              <p>真正难的往往不是调用模型，而是把输出接进稳定、可理解、可维护的产品流程。</p>
-              <a href="#">阅读条目</a>
-            </article>
-            <article class="writing-card">
-              <span class="writing-type">System Note</span>
-              <h3>我怎么设计一个可扩展的 Agent 工作流</h3>
-              <p>任务拆解、工具边界、错误恢复和可观察性，决定了 Agent 是否能走出实验室。</p>
-              <a href="#">阅读条目</a>
-            </article>
-            <article class="writing-card">
-              <span class="writing-type">Field Memo</span>
-              <h3>AI 产品不该只有能力展示，还要有清晰的交付体验</h3>
-              <p>用户不关心你调了几个模型，更关心这个系统能不能让事情变简单。</p>
-              <a href="#">阅读条目</a>
-            </article>
-          </div>
-        </section>
-
-        <section class="section story-section reveal" id="story">
-          <div class="section-heading">
-            <p class="eyebrow">BUILD LOGIC</p>
-            <h2>我的方法论</h2>
-          </div>
-
-          <div class="story-grid">
-            <div class="timeline">
-              <article class="timeline-item">
-                <span class="timeline-year">01</span>
-                <div>
-                  <h3>先定义问题，再调用模型</h3>
-                  <p>我会先拆清用户任务、输入输出和失败路径，再决定模型、工具和界面如何协作。</p>
-                </div>
-              </article>
-              <article class="timeline-item">
-                <span class="timeline-year">02</span>
-                <div>
-                  <h3>把 demo 做成真实可运行的系统</h3>
-                  <p>我更在意稳定性、可维护性和交付体验，而不是只展示一个会动的原型。</p>
-                </div>
-              </article>
-              <article class="timeline-item">
-                <span class="timeline-year">03</span>
-                <div>
-                  <h3>持续记录、持续迭代</h3>
-                  <p>项目、笔记和开源仓库会一起生长，让每一次实验都变成长期积累的一部分。</p>
-                </div>
-              </article>
-            </div>
-
-            <aside class="glass-card story-note">
-              <p class="card-kicker">POSITIONING</p>
-              <h3>适合放在个人主页的一句介绍</h3>
-              <p>
-                I build AI-native products and developer workflows that turn model capability into practical execution.
-              </p>
-              <p class="story-tip">
-                如果你后面有具体项目名称、技术栈或一句更像你本人的自我介绍，我也可以继续帮你替换成更精准的版本。
-              </p>
-            </aside>
-          </div>
-        </section>
-
-        <section class="section contact-section reveal" id="contact">
-          <div class="contact-card">
-            <p class="eyebrow">CONTACT CHANNELS</p>
-            <h2>欢迎交流 AI 产品、Agent 系统、自动化工具和有意思的构建想法。</h2>
-            <p>
-              这个主页会部署到 <strong>challovactor.github.io</strong>。如果你希望继续扩成博客、项目详情页或英文版，也可以在这个基础上继续迭代。
-            </p>
-
-            <div class="contact-links">
-              <a href="mailto:breeze_ng@qq.com">breeze_ng@qq.com</a>
-              <a href="https://github.com/Challovactor" target="_blank" rel="noreferrer">
-                github.com/Challovactor
-              </a>
-              <a href="https://challovactor.github.io" target="_blank" rel="noreferrer">
-                challovactor.github.io
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <p>© <span id="year"></span> Breeze Ng. Built on GitHub Pages.</p>
-      </footer>
+      <div class="signal-strip">
+        <div class="signal-card">
+          <span class="signal-label">当前聚焦</span>
+          <strong>LLM 应用、Agent 编排、效率自动化</strong>
+        </div>
+        <div class="signal-card">
+          <span class="signal-label">博客引擎</span>
+          <strong>Jekyll on GitHub Pages</strong>
+        </div>
+        <div class="signal-card">
+          <span class="signal-label">本地时间</span>
+          <strong class="local-time" data-timezone="Asia/Shanghai">--:--</strong>
+        </div>
+      </div>
     </div>
 
-    <script src="./script.js"></script>
-  </body>
-</html>
+    <aside class="hero-panel">
+      <div class="glass-card profile-card">
+        <p class="card-kicker">SYSTEM PROFILE</p>
+        <h2>为 AI 产品做工程化封装，也为长期写作搭一条稳定的发布链路。</h2>
+        <p>
+          这套站点现在支持 Markdown 文章、独立文章页、博客列表页和自动生成的 Feed，
+          后面你只需要持续写内容，页面会跟着一起增长。
+        </p>
+      </div>
+
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <span class="metric-number">{{ site.posts.size }}</span>
+          <span class="metric-label">已发布文章</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-number">MD</span>
+          <span class="metric-label">Markdown 写作</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-number">RSS</span>
+          <span class="metric-label">自动 Feed 输出</span>
+        </article>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section manifesto reveal">
+    <div class="section-heading">
+      <p class="eyebrow">TECH FOCUS</p>
+      <h2>我关注的构建方向</h2>
+    </div>
+
+    <div class="manifesto-grid">
+      <article class="glass-card manifesto-card">
+        <span class="manifesto-index">01</span>
+        <h3>LLM Applications</h3>
+        <p>把大模型能力转成清晰的产品功能，而不是停留在 demo 级别的对话界面。</p>
+      </article>
+      <article class="glass-card manifesto-card">
+        <span class="manifesto-index">02</span>
+        <h3>Agent Workflows</h3>
+        <p>关注多步骤任务拆解、上下文流转、工具调用和真实业务流程里的执行稳定性。</p>
+      </article>
+      <article class="glass-card manifesto-card">
+        <span class="manifesto-index">03</span>
+        <h3>Automation Systems</h3>
+        <p>把重复操作、内容生成、数据处理和协作环节，做成真正省时间的自动化系统。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" id="work">
+    <div class="section-heading section-heading-inline">
+      <div>
+        <p class="eyebrow">SELECTED MODULES</p>
+        <h2>项目展示</h2>
+      </div>
+      <a
+        class="text-link"
+        href="https://github.com/Challovactor"
+        target="_blank"
+        rel="noreferrer"
+      >
+        查看 GitHub 仓库
+      </a>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card project-card-featured">
+        <div class="project-meta">
+          <span>FEATURED</span>
+          <span>Agent / Product / Interface</span>
+        </div>
+        <h3>Agent Workspace</h3>
+        <p>
+          面向真实任务流的 Agent 工作台：整合模型调用、上下文组织、操作反馈和结果交付，
+          把 AI 从“聊天”推进到“执行”。
+        </p>
+        <div class="tag-row">
+          <span>LLM</span>
+          <span>Agent</span>
+          <span>Workflow</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-meta">
+          <span>MODULE 01</span>
+          <span>Automation</span>
+        </div>
+        <h3>Workflow Automations</h3>
+        <p>把表单处理、内容生成、消息分发和重复性工作编排成可复用的自动化流程。</p>
+      </article>
+
+      <article class="project-card">
+        <div class="project-meta">
+          <span>MODULE 02</span>
+          <span>Publishing</span>
+        </div>
+        <h3>AI Notes System</h3>
+        <p>把项目更新、构建方法和技术判断沉淀成文章，让网站从个人主页升级成长期写作阵地。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" id="writing">
+    <div class="section-heading section-heading-inline">
+      <div>
+        <p class="eyebrow">LATEST POSTS</p>
+        <h2>最新文章</h2>
+      </div>
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">查看全部文章</a>
+    </div>
+
+    <div class="writing-grid">
+      {% for post in site.posts limit:3 %}
+        <article class="writing-card">
+          <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 96 }}</p>
+          <a href="{{ post.url | relative_url }}">阅读文章</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section story-section reveal" id="story">
+    <div class="section-heading">
+      <p class="eyebrow">BUILD LOGIC</p>
+      <h2>我的方法论</h2>
+    </div>
+
+    <div class="story-grid">
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-year">01</span>
+          <div>
+            <h3>先定义问题，再调用模型</h3>
+            <p>我会先拆清用户任务、输入输出和失败路径，再决定模型、工具和界面如何协作。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">02</span>
+          <div>
+            <h3>把 demo 做成真实可运行的系统</h3>
+            <p>我更在意稳定性、可维护性和交付体验，而不是只展示一个会动的原型。</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">03</span>
+          <div>
+            <h3>持续记录、持续迭代</h3>
+            <p>项目、笔记和文章会一起生长，让每一次实验都变成长期积累的一部分。</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="glass-card story-note">
+        <p class="card-kicker">BLOG SYSTEM</p>
+        <h3>现在你可以怎么更新这个站</h3>
+        <p>
+          以后只要在 <code>_posts</code> 目录新增一篇 Markdown 文件，这个站点就会自动生成新的博客文章页和首页文章卡片。
+        </p>
+        <p class="story-tip">
+          文章文件名格式是 <code>YYYY-MM-DD-title.md</code>，内容支持标题、列表、代码块和标签。
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section contact-section reveal" id="contact">
+    <div class="contact-card">
+      <p class="eyebrow">CONTACT CHANNELS</p>
+      <h2>欢迎交流 AI 产品、Agent 系统、自动化工具和有意思的构建想法。</h2>
+      <p>
+        站点地址是 <strong>challovactor.github.io</strong>，博客订阅源会自动输出在
+        <strong>/feed.xml</strong>。
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:breeze_ng@qq.com">breeze_ng@qq.com</a>
+        <a href="https://github.com/Challovactor" target="_blank" rel="noreferrer">
+          github.com/Challovactor
+        </a>
+        <a href="{{ '/blog/' | relative_url }}">博客首页</a>
+      </div>
+    </div>
+  </section>
+</main>

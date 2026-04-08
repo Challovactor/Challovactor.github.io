@@ -1,0 +1,37 @@
+title: Breeze Ng
+email: breeze_ng@qq.com
+description: "Breeze Ng's site and blog about LLM apps, agent systems, workflow automation, multimodal interfaces, and AI product engineering."
+url: "https://challovactor.github.io"
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+excerpt_separator: <!--more-->
+
+author:
+  name: Breeze Ng
+  email: breeze_ng@qq.com
+  github: Challovactor
+
+social:
+  name: Breeze Ng
+  links:
+    - https://github.com/Challovactor
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<main class="post-main">
+  <article class="section post-article reveal">
+    <header class="post-header">
+      <p class="eyebrow">{{ page.post_type | default: "Post" }}</p>
+      <h1>{{ page.title }}</h1>
+
+      <div class="post-meta-row">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%Y-%m-%d" }}
+        </time>
+        {% if page.reading_time %}
+          <span>{{ page.reading_time }}</span>
+        {% endif %}
+      </div>
+
+      {% if page.summary %}
+        <p class="post-summary">{{ page.summary }}</p>
+      {% endif %}
+
+      {% if page.tags and page.tags.size > 0 %}
+        <div class="tag-row">
+          {% for tag in page.tags %}
+            <span>{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </article>
+
+  <section class="section reveal">
+    <div class="section-heading section-heading-inline">
+      <div>
+        <p class="eyebrow">MORE WRITING</p>
+        <h2>继续阅读</h2>
+      </div>
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">返回博客首页</a>
+    </div>
+
+    <div class="writing-grid">
+      {% assign shown = 0 %}
+      {% for post in site.posts %}
+        {% if post.url != page.url and shown < 3 %}
+          <article class="writing-card">
+            <span class="writing-type">{{ post.post_type | default: "Post" }}</span>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.summary | default: post.excerpt | strip_html | truncate: 100 }}</p>
+            <a href="{{ post.url | relative_url }}">阅读文章</a>
+          </article>
+          {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+</main>

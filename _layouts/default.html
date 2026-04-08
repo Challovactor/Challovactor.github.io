@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06111f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+    {% seo %}
+    {% feed_meta %}
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="site-glow site-glow-a"></div>
+      <div class="site-glow site-glow-b"></div>
+
+      <header class="topbar">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-mark"></span>
+          <span class="brand-text">BREEZE NG</span>
+        </a>
+
+        <nav class="nav">
+          <a href="{{ '/#work' | relative_url }}">项目</a>
+          <a href="{{ '/blog/' | relative_url }}">博客</a>
+          <a href="{{ '/#story' | relative_url }}">方法</a>
+          <a href="{{ '/#contact' | relative_url }}">联系</a>
+        </nav>
+      </header>
+
+      {{ content }}
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Breeze Ng. Built on GitHub Pages and Jekyll.</p>
+      </footer>
+    </div>
+
+    <script src="{{ '/script.js' | relative_url }}"></script>
+  </body>
+</html>
