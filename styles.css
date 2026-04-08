@@ -1028,12 +1028,17 @@ main,
 }
 
 .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 540ms ease, transform 540ms ease;
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
